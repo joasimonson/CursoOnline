@@ -1,0 +1,28 @@
+{
+    "name": "cursoonline",
+    "version": "1.0.0",
+    "description": "Projeto destinado a ser base de estudo para pessoas que querem aprender testes de unidade e TDD",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "start": "dotnet watch -p ./src/CursoOnline.Web/CursoOnline.Web.csproj run",
+        "test": "testcafe edge tests/e2e",
+        "debug": "testcafe --inspect-brk edge tests/e2e"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/joasimonson/CursoOnline.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/joasimonson/CursoOnline/issues"
+    },
+    "homepage": "https://github.com/joasimonson/CursoOnline#readme",
+    "devDependencies": {
+        "faker": "^4.1.0",
+        "testcafe": "^1.9.4"
+    }
+}

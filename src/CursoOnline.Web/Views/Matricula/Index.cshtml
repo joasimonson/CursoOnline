@@ -1,0 +1,36 @@
+﻿@using CursoOnline.Dominio.Matriculas
+@model IEnumerable<MatriculaDTO>
+@{
+    ViewData["Title"] = "Matrículas";
+}
+
+<h1>Matrículas</h1>
+
+<p>
+    <a asp-action="Incluir" class="btn btn-primary">Incluir</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome do aluno</th>
+            <th>Nome do curso</th>
+            <th>Valor pago</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.NomeAluno
+                </td>
+                <td>
+                    @item.NomeCurso
+                </td>
+                <td>
+                    @item.ValorPago
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

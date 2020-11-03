@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CursoOnline.Dominio.Cursos.CursoDTO>
+
+@{
+    ViewData["Title"] = "Cursos";
+}
+
+<h1>Cursos</h1>
+
+<p>
+    <a asp-action="Incluir" class="btn btn-primary">Incluir</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Carga Horária</th>
+            <th>Público Alvo</th>
+            <th>Valor</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CargaHoraria)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PublicoAlvoId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>
+                <td>
+                    <a asp-action="Alterar" asp-route-id="@item.Id">Alterar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

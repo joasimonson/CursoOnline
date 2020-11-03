@@ -1,0 +1,41 @@
+﻿@model CursoOnline.Dominio.Matriculas.MatriculaDTO
+
+@{
+    ViewData["Title"] = "Salvar matrícula";
+}
+
+<h1>Salvar matrícula</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Salvar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AlunoId" class="control-label"></label>
+                <select asp-for="AlunoId" asp-items="@(ViewBag.ListaAluno)" class="form-control"></select>
+                <span asp-validation-for="AlunoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CursoId" class="control-label"></label>
+                <select asp-for="CursoId" asp-items="@(ViewBag.ListaCurso)" class="form-control"></select>
+                <span asp-validation-for="CursoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorPago" class="control-label"></label>
+                <input asp-for="ValorPago" class="form-control" />
+                <span asp-validation-for="ValorPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
